@@ -1,6 +1,10 @@
 # React dialog hook
 
-This hook was made to manage dialog state in React. Main feature is possibility to get results passed as argument of `close` method as returned value from `open` dialog method. See [example](#example). _It's fully written in Typescript._
+This hook was made to manage dialog state in React. The main feature is a possibility to get results passed as an argument of the `close` method as a returned value from the `open` dialog method. See [example](#example).
+
+All data (params and results) are also available as returned object keys from the hook.
+
+_It's fully written in Typescript._
 
 ## Usage
 
@@ -21,24 +25,40 @@ import { useDialog } from "react-dialog-hook";
 ```typescript
 import { useDialog } from "react-hook-dialog";
 
+function Dialog({ isOpen, close, params }) {
+  const dialogResult = "RESULT"
+  return (
+    <>
+      {isOpen && (
+        <div>
+          <h1>DIALOG HEADER</h1>
+          <button onClick={() => close(dialogResult)}>close</button>
+        </div>
+      )}
+    </>
+  )
+}
+
 function Example() {
   const {
     isOpen
     open
     close
-    params
-  } = useDialog<ParamsType>({
+    params,
+    results
+  } = useDialog<ParamsType, ResultsType>({
     isDefaultOpen: false; // Set dialog open after first render
   });
 
   const openHandler = useCallback(async () => {
-    const results = await open(); // It returns results passed as argument to close method
+    const dialogParams = "PARAM"
+    const resultsFromDialog = await open(dialogParams); // It returns results passed as argument to close method
   }, []);
 
   return (
     <>
-    <Button onClick={openHandler}>OPEN DIALOG</Button>
-    <Dialog isOpen={isOpen} close={close} params={params} />
+      <button onClick={openHandler}>OPEN DIALOG</button>
+      <Dialog isOpen={isOpen} close={close} params={params} />
     </>
   )
 }
@@ -46,17 +66,17 @@ function Example() {
 
 ## Config
 
-| Key           | Default | Description                                                       |
-| ------------- | :-----: | ----------------------------------------------------------------- |
-| isDefaultOpen | `false` | Allows to open dialog on first render without user's ingerention. |
+| Key           | Default | Description                                                                |
+| ------------- | :-----: | -------------------------------------------------------------------------- |
+| isDefaultOpen | `false` | Allows opening dialog on the first render without the user's intervention. |
 
 ## Bugs reporting
 
-To report bug connected with lib, please open new issue, assign one if the [authors](#authors) into it and add `bug` label.
+To report a bug connected with lib, please open a new issue, assign one of the [authors](#authors) into it and add the `bug` label.
 
 ## Contributing
 
-If you have any idea how to improve this lib, please fork this repo, suggest changes, make a PR and add one of the authors as a reviewer. Don't forget to add proper description of this feature/bugfix.
+If you have any idea how to improve this lib, please fork this repo, suggest changes, make a PR and add one of the [authors](#authors) as a reviewer. Don't forget to add a proper description of this feature/bugfix.
 
 # Authors ✨
 
