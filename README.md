@@ -11,7 +11,7 @@ _It's fully written in Typescript._
 ### Installing
 
 ```sh
-npm install git+https://github.com/hstemplewski/react-dialog-hook.git
+npm i react-dialog-hook
 ```
 
 ### Importing
@@ -69,6 +69,16 @@ function Example() {
 | Key           | Default | Description                                                                |
 | ------------- | :-----: | -------------------------------------------------------------------------- |
 | isDefaultOpen | `false` | Allows opening dialog on the first render without the user's intervention. |
+
+## Results
+
+| Key     | Type                        | Description                                                                                                                     |
+| ------- | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| isOpen  | `boolean`                   | Opening state of dialog                                                                                                         |
+| params  | `any`                       | Params which can be passed into hook via `open` method.                                                                         |
+| results | `any`                       | Results passed into `close` method accesible via this key and also as returned value from `open` method.                        |
+| open    | `async (params) => results` | Method which change dialog state to open and set params passed as argument. Returns results which were set from `close` method. |
+| close   | `async (results) => void`   | Method which change dialog state to close and set results passed as argument.                                                   |
 
 ## Bugs reporting
 
