@@ -22,6 +22,8 @@ import { useDialog } from "react-dialog-hook";
 
 ### Example
 
+Live demo in codesandbox is available here: https://codesandbox.io/s/react-dialog-hook-demo-b99uy?file=/src/App.tsx
+
 ```typescript
 import { useDialog } from "react-hook-dialog";
 
