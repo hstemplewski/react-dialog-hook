@@ -3,7 +3,7 @@ tsconfig.json
 eslint.json
 index.ts
 .prettierrc.json
-.prettieringore
+.prettierignore
 jestconfig.json
 .github
 .eslintrc.json
