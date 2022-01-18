@@ -1,10 +1,26 @@
 {
   "name": "react-dialog-hook",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "React hook for manage dialogs state",
   "main": "lib/index.js",
   "author": "Hubert Stemplewski",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hstemplewski/react-dialog-hook"
+  },
+  "homepage": "https://github.com/hstemplewski/react-dialog-hook",
+  "bugs": {
+    "url": "https://github.com/hstemplewski/react-dialog-hook/issues"
+  },
+  "keywords": [
+    "react",
+    "dialog",
+    "hook",
+    "react-dialog",
+    "react-dialog-hook",
+    "modal"
+  ],
   "scripts": {
     "test": "jest --config jestconfig.json",
     "build": "rm -rf ./lib && tsc --module CommonJS --outDir ./lib",
