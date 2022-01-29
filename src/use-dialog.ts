@@ -4,7 +4,7 @@ interface UseDialogConfig {
   isDefaultOpen?: boolean;
 }
 
-interface UseDialogInterface<Params = unknown, Results = unknown> {
+export interface UseDialogInterface<Params = unknown, Results = unknown> {
   isOpen: boolean;
   params: Params | null;
   results: Results | null;
