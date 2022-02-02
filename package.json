@@ -1,6 +1,6 @@
 {
   "name": "react-dialog-hook",
-  "version": "0.1.0",
+  "version": "0.0.9",
   "description": "React hook for manage dialogs state",
   "main": "lib/index.js",
   "author": "Hubert Stemplewski",
