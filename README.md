@@ -20,6 +20,12 @@ npm i react-dialog-hook
 import { useDialog } from "react-dialog-hook";
 ```
 
+It is possible to use already prepared context for dialog:
+
+```typescript
+import { DialogConsumer, DialogProvider, DialogContext } from "react-dialog-hook";
+```
+
 ### Example
 
 Live demo in codesandbox is available here: https://codesandbox.io/s/react-dialog-hook-demo-b99uy?file=/src/App.tsx
